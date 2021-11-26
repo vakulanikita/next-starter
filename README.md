@@ -20,3 +20,10 @@ $PROJECT_ROOT
 │   # Static files for images and 3d model file
 └── public
 ```
+## Available Scripts
+### `npm run dev`
+
+## Todo
+
+- Formik & Yup starter project
+- Delete api folder

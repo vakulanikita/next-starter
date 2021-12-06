@@ -8,10 +8,20 @@ export default function ThemeToggleButton() {
   const icon = useColorModeValue(<MoonIcon />, <SunIcon />);
 
   return (
-    <IconButton
-      colorScheme={color}
-      icon={icon}
-      onClick={toggleColorMode}
-    ></IconButton>
+    <AnimatePresence exitBeforeEnter initial={false}>
+      <motion.div
+        key={useColorModeValue('light', 'dark')}
+        initial={{ y: -10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 10, opacity: 0 }}
+        transition={{ duration: 0.15 }}
+      >
+        <IconButton
+          colorScheme={color}
+          icon={icon}
+          onClick={toggleColorMode}
+        ></IconButton>
+      </motion.div>
+    </AnimatePresence>
   )
 }
